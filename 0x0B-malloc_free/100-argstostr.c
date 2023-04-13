@@ -18,7 +18,7 @@ char *argstostr(int ac, char **av)
 		
 	int i, n, a = 0, b = 0;
 	  
-	char *str;
+	char *cdf;
 		
 
 		
