@@ -18,28 +18,38 @@ int _atoi(char *s)
 
 	while (s[abc] != '\0')
 		abc++;
-	while (i < abc; && b == 0)
+	
+	while (i < abc && b == 0)
 	{
-		if (s[i] == '-')
+		if (s[i] ==  '-')
 			++a;
+		
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			num = s[i] - '0';
+			
 			if (a % 2)
 				num = -num;
-			n *= 10 + num;
+			
+			n = n * 10 + num;
 			b = 1;
+			
 			if (s[i + 1] < '0' || s[i + 1] > '9')
+				
 				break;
 			b = 0;
 		}
+		
 		i++;
 	}
 
 	if (b == 0)
+		
 		return (0);
+	
 	return (n);
 }
+
 /**
  * main - multiplies two num
  * @argc: num of arg
