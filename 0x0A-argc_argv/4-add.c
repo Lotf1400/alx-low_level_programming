@@ -11,6 +11,7 @@
 int check_num(char *str)
 {
 	unsigned int i;
+	
 	i = 0;
 
 	while (i < strlen(str))
@@ -19,6 +20,7 @@ int check_num(char *str)
 		{
 			return (0);
 		}
+		
 		i++;
 	}
 	return (1);
@@ -31,14 +33,14 @@ int check_num(char *str)
  * Return: 0 (success)
  */
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 	int d;
 	int sum = 0;
 	i = 1;
 
-	while (i < argc) /*this should be applied on the whiole array*/
+	while (i < argc) /*this should be applied on the whole array*/
 	{
 		if (check_num(argv[i]))
 		{
