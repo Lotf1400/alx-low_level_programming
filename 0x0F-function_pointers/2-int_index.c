@@ -7,7 +7,7 @@
  * Return: 0 (success)
  */
 
-int int_index(char *array, int size, int (*cmp)(int))
+int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
