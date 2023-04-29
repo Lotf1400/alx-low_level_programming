@@ -5,8 +5,8 @@ size_t looped_listint_len(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
 
 /**
- * looped_listint_len - it counts the num of nodes
- * in a looped list
+ * looped_listint_len - it counts the num
+ * of the nodes in a looped list
  * @head: it points to first node
  * Return: the num of nodes, otherwise 0
  */
@@ -27,6 +27,14 @@ size_t looped_listint_len(const listint_t *head)
 		if (i == a)
 		{
 			i = head;
+			while (i != a)
+			{
+				delf++;
+				i = i->next;
+				a = a->next;
+			}
+
+			i = i->next;
 			while (i != a)
 			{
 				delf++;
@@ -74,7 +82,7 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 		}
 
-		printf("->[%p] %d\n", (void *)head, head->n);
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 
 	return (node);
