@@ -8,9 +8,9 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *tmp;
 	size_t delf = 0;
 	int i;
+	listint_t *tmp;
 
 	if (!h || !*h)
 		return (0);
@@ -33,6 +33,7 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		}
 	}
+	
 	*h = NULL;
 
 	return (delf);
