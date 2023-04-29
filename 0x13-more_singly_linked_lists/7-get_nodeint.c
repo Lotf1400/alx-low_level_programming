@@ -10,7 +10,7 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	listint_t *abc = head;
-	unsigned int a;
+	unsigned int a = 0;
 
 	while (abc && a < index)
 	{
