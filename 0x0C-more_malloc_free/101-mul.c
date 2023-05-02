@@ -55,7 +55,7 @@ void errors(void)
 
 int main(int argc, char *argv[])
 {
-	char i, j;
+	char *i, *j;
 	int a, b, len, c, crr, num1, num2, *sum, o = 0;
 
 	i = argv[1], j = argv[2];
