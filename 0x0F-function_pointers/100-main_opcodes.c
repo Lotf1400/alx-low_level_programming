@@ -25,13 +25,14 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
+	
 	abc = (char *)main;
 
 	for (i = 0; i < a; i++)
 	{
 		if (i == a - 1)
 		{
-			printf("%02hhx\n", arr[i]);
+			printf("%02hhx\n", abc[i]);
 			break;
 		}
 
