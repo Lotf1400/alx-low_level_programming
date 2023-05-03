@@ -1,74 +1,76 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * count_word - it helps the function to count the num of words in a str
- * @str1: the str to count his words
- * Return: the num of words
+ * count_word - it helps the function to count
+ * words in a str
+ * @s: the str to count his words
+ * Return: num of words found in the str
  */
 
-int count_word(int *str1)
+int count_word(char *s)
 {
-	int abc, a, b;
-
-	abc = 0;
+	int i, a, b;
+	i = 0;
 	b = 0;
 
-	for (a = 0;str1[a] != '\0'; a++)
-	if (str1[a] == ' ')
-
-		abc = 0;
-	else if (abc == 0)
+	for (a = 0; s[a] != '\0'; a++)
 	{
-		abc = 1;
-		b++;
+		if (s[a] == ' ')
+			i = 0;
+		else if ( i == 0)
+		{
+			i = 1;
+			b++;
+		}
 	}
+
 	return (b);
 }
 /**
- * **strtow - splits a str into two words
+ * **strtow - it splits a str into words
  * @str: the string to split
- * Return: pointer to an array of strings, NULL otherwise
+ * Return: a ptr to an array containing
+ * str, otherwise NULL
  */
 
 char **strtow(char *str)
 {
-	char **def, *see;
-	int i, j = 0, low = 0, wrds, k = 0, first, last;
+	char **abc, *o;
+	int i, a = 0, b = 0, c = 0, word, first, last;
 
-	while (*(str + low)
-			low++;
-			wrds = count_word(str);
+	while (*(str + b))
+		b++;
+	word = count_word(str);
+	if (word == 0)
+		return (NULL);
 
-			if (wrds == 0)
-			return (NULL);
-			def = (char **) malloc(sizeof(char *) * (wrds + 1));
+	abc = (char **) malloc(sizeof(char *) * (word + 1));
+	if (abc == NULL)
+		return (NULL);
 
-			if (def == NULL)
-			return (NULL);
-
-			for (i = 0; i <= low; i++)
+	for (i = 0; i <= b; i++)
+	{
+		if (str[i] == ' ' || str[i] == '\0')
+		{
+			if (c)
 			{
-			        if (str[i] == ' ' || str[i] == '\0')
-				{
-				   if (k)
-				   {
-				   last = i;
-				   see = (char *) malloc(sizeof(char) * (k + 1));
-				   if (see == NULL)
-				           return (NULL);
-				   while (first < last)
-					   *see++ = str[first++];
-				   *see = '\0';
-				   def[j] = see - k;
-				   j++;
-				   k = 0;
-				   }
-			        }
-				
-				else if (k++ == 0)
-					first = i;
-		        }
-	                
-	                def[j] = NULL;
-			return (def);
+				last = i;
+				o = (char *) malloc(sizeof(char) * (c + 1));
+				if (o == NULL)
+					return (NULL);
+				while (first < last)
+					*o++ = str[first++];
+				*o = '\0';
+				abc[a] = o - c;
+				a++;
+				c = 0;
+			}
+		}
+		else if (c++ == 0)
+			first = i;
+	}
+
+	abc[a] = NULL;
+
+	return (abc);
 }
