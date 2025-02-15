@@ -3,21 +3,21 @@
  * _strncpy: copy a string
  * @dest: input value
  * @src: value to input
- * @n: value to input
+ * @a: value to input
  * Return: dest
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int a)
 {
 	int j;
 
 	j = 0;
-	while (j < n && src[j] != '\0')
+	while (j < a && src[j] != '\0')
 	{
 		dest[j] = src[j];
 		j++;
 	}
-	while (j < n)
+	while (j < a)
 	{
 		dest[j] = '\0';
 		j++;
